@@ -66,9 +66,9 @@ const app = new Vue({
   computed: {            //计算属性
     totalPrice(){
       let price=0;
-      for(let i in this.list){
-        if(this.list[i].pushed){
-          price += this.list[i].price;
+      for(let i of this.list){
+        if(i.pushed){
+          price += i.price;
         }
       }
       return price;
