@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>练习2</title>
+  <link rel="stylesheet" href="./css.css">
+</head>
+<body>
+  <div class="app">
+    <h2>一夜情招聘</h2>
+    <table>
+      <thead>
+        <tr>
+          <th v-for="text in head">{{text}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(people , index) in list" :class="{pushedStyle:people.pushed}">
+          <td >{{people.id}}</td>
+          <td>{{people.name}}</td>
+          <td>{{people.age}}</td>
+          <td>{{people.gender}}</td>
+          <td>{{people.price | getPrice}}</td>
+          <td>
+            <button 
+              :disabled="people.disable"
+              @click="onClick(people)"
+              :class="{textRed:people.disable,changeStyle:!people.disable,pushedStyle:people.pushed}">
+              {{people.disable?'工作中':people.pushed?'取消':'选择'}}
+            </button>
+          </td>
+          <td>
+            <button
+              @click="disLike(index)"
+              :class="{changeStyle:true}"
+              >移除
+            </button>
+          </td>
+        </tr>
+      </tbody>  
+    </table>
+    <h1 v-if="list.length!=0" style="width: 700px;">总价:{{totalPrice | getPrice}}</h1>
+    <h1 v-if="list.length===0">---空！</h1>
+  </div><!--/app-->
+
+
+
+  <script src="../vue.js"></script>
+  <script src="./js.js"></script>
+
+</body>
+</html>

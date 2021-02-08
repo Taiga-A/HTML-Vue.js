@@ -1,0 +1,54 @@
+*{
+  padding: 0;
+}
+h2{
+  cursor:inherit;
+  width: 700px;
+  text-align: center;
+  font-size: 40px;
+  margin: 10px 0;
+}
+table{
+  border: black solid 1px;
+  border-collapse: collapse;
+}
+th{
+  font-size: 20px;
+  width: 100px;
+  line-height: 40px;
+}
+td{
+  line-height: 50px;
+  font-size: 18px;
+  text-align: center;
+}
+th, td{
+  border: 1px solid black;
+}
+thead{
+  background-color: rgb(209, 209, 209);
+}
+button{
+  cursor: pointer;
+  display: block;
+  width: 100px;
+  height: 50px;
+  border: none;
+  transition: all 0.5s;
+}
+
+.textRed{
+  color: red;
+  background-color: rgb(201, 201, 201);
+  cursor:inherit;
+}
+.pushedStyle{
+  background-color: rgba(0, 26, 255, 0.13);
+}
+.changeStyle{
+  transition: all 0.2s;
+}
+.changeStyle:hover{
+  background-color: rgba(165, 42, 42, 0.205);
+  font-size: 14px;
+}
