@@ -72,13 +72,14 @@ const app = new Vue({
       //   }
       // }
       // return price;
-      return this.list.filter(function(n){
-        return n.pushed;
-      }).reduce(function(preValue,n){
-        return preValue + n.price;
-      },0)
+      return this.list.filter(
+        n => n.pushed
+      ).reduce(
+        (preValue,n) => preValue + n.price 
+      ,0)
     },
 
+    
 
   },
 
