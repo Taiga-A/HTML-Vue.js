@@ -65,13 +65,18 @@ const app = new Vue({
 
   computed: {            //计算属性
     totalPrice(){
-      let price=0;
-      for(let i of this.list){
-        if(i.pushed){
-          price += i.price;
-        }
-      }
-      return price;
+      // let price=0;
+      // for(let i of this.list){
+      //   if(i.pushed){
+      //     price += i.price;
+      //   }
+      // }
+      // return price;
+      return this.list.filter(function(n){
+        return n.pushed;
+      }).reduce(function(preValue,n){
+        return preValue + n.price;
+      },0)
     },
 
 
