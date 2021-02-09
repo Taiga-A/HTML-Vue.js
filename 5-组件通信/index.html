@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>组件通信</title>
+</head>
+<body>
+  <div id="app">
+    <textin :cage="age" 
+            :csex="sex"
+            @in-price="inPriced">
+    </textin>
+    <h2 v-show="price != '空'">{{'目前价格为:'+price}}</h2>
+  </div>
+
+
+
+
+
+  <template id="textin">
+    <div>
+      <div>Hello_World</div>
+      <div>{{cname+cage+csex}}</div>
+      <button @click='getPrice(0)'>$3</button>
+      <button @click='getPrice(1)'>￥25</button>
+      <button @click='getPrice(2)'>￥33</button>
+      <button @click="getPrice('x')">取消</button>
+    </div>
+  </template>
+
+
+  <script src="../vue.js"></script>
+  <script>
+
+
+const textin = {
+  template: '#textin',
+  data() {
+    return {
+      cname: '白某',
+      price: ['$3','￥25','￥33'],
+    }
+  },
+  props: ['cage','csex'],
+  methods: {
+    getPrice(n) {
+      if(n == 'x'){
+        this.$emit('in-price','空');
+      }else{
+        this.$emit('in-price',this.price[n]);
+      }
+    },
+    
+  },
+}
+
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    age: 18,
+    sex: '男',
+    price: '空',
+  },
+  components: {
+    textin
+  },
+  methods: {
+    inPriced(price) {
+      this.price=price;
+      console.log(price);
+    }
+  }
+
+
+
+})
+
+  </script>
+</body>
+</html>
