@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>插槽的基本用法</title>
+</head>
+<body>
+  
+  <div id="app">
+    <cpn>
+      <h4>无名插槽</h4>
+      <h4 slot="1">插槽1</h4>
+      <h4 slot="3">插槽3</h4>
+    </cpn>
+  </div>
+
+  <template id="cpn">
+    <div>
+      <h2>HelloWorld</h2>
+      <slot></slot>
+      <slot></slot>
+      <slot></slot>
+      <slot name="1">
+        <h4>未替换1</h4>
+      </slot>
+      <slot name="2">
+        <h4>未替换2</h4>
+      </slot>
+      <slot name="3">
+        <h4>未替换3</h4>
+      </slot>
+    
+    </div>
+  </template>
+
+
+  <script src="../vue.js"></script>
+  <script>
+    const cpn = {
+      template: '#cpn',
+
+    }
+
+
+    const app = new Vue({
+      el: "#app",
+      components: {
+        cpn,
+
+      },
+ 
+
+
+
+
+    })
+
+
+
+
+  </script>
+
+</body>
+</html>
