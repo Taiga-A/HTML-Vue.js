@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>父子访问</title>
+</head>
+<body>
+  <div id="app">
+    <cpn ref='cpn1'></cpn>
+    <button @click="onButton">改值</button>
+  </div>
+
+
+
+
+  <template id="cpn">
+    <div>
+      我是子组件<br/>
+      <button @click="sayName">子组件</button>
+    </div>
+  </template>
+  <script src="../vue.js"></script>
+  <script>
+
+    const cpn = {
+      template: '#cpn',
+      data(){
+        return {
+          name: '子组件',
+        }
+      },
+      methods: {
+        sayName(){
+          console.log(this.$parent)//打印父组件
+          console.log(this.$root)//打印根组件
+        }
+      }
+    }
+
+    const app =new Vue({
+      el: '#app',
+      components: {
+        cpn,
+      },
+      methods: {
+        onButton(){
+          console.log(this.$children[0]);//依据数组寻找组件
+          console.log(this.refs.cpn1);//依据ref寻找组件
+        }
+      },
+      data: {
+        name: '父组件',
+      }
+    })
+  </script>
+</body>
+</html>
