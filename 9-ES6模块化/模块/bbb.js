@@ -4,3 +4,4 @@ export let sayNameB = function(){
 }
 
 nameB = '模块B';
+// export let nameB = '修改前的模块B';
