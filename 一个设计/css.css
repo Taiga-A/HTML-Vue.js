@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(185, 185, 185);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app{
+  width: 23vw;
+  height: 70vh;
+  background-color: rgb(129, 129, 129);
+  border-radius: 2vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.inputOut{
+  background-color: burlywood;
+  width: 21vw;
+  height: 8vh;
+  margin-top: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vh;
+}
+.timesOut{
+  background-color: rgb(160, 222, 135);
+  width: 45%;
+  height: 5vh;
+  margin-top: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vh;
+}
+.times{
+  background-color: rgb(160, 222, 135);
+  width: 90%;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  text-align: center;
+}
+.open{
+  background-color: rgb(247, 92, 92);
+  width: 45%;
+  height: 5.4vh;
+  margin-top: 4vh;
+  margin-left: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  text-align: center;
+  border: none;
+  border-radius: 1vh;
+  color: rgb(255, 255, 255);
+}
+.line{
+  width: 21vw;
+  height: 10vh;
+  display: flex;
+}
+input{
+  width: 18vw;
+  height: 7vh;
+  background-color: burlywood;
+  border: none;
+  font-size: 4vh;
+  color: rgb(83, 83, 83);
+}
+.cal{
+  width: 90%;
+  height: 50%;
+  font-size: 4vh;
+}
+.aCal{
+  height: 15%;
+  width: 45%;
+  margin-left: 0.5vh;
+  margin-top: 2vh;
+}
