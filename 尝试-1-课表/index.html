@@ -10,14 +10,33 @@
 <body>
   <div id="app">
     
+    
+    <div id="classBigBox">
+      <div id="timeList" class="list">
+        <div class="timeListNum" style="color:black;background: none;" v-for="value in timeList">{{value}}</div>
+      </div>
+      <div class="list" v-for="value in classData">
+        <div class="date" style="line-height: 4.5vw;">{{value.date | getDate}}</div>
+        <div :class="{listNum:1,
+                      listNum1:message.number==1,
+                      listNum2:message.number==2,
+                      noneClass:message.name=='空',
+                      normal:message.name!='空',  
+                    }" 
+            @Mouseup="onDetails(message)"
+            v-for="message in value.aclass">{{message.name}}</br>{{message.name=='空'?'':message.place}}</div>
+      </div>
 
 
 
+
+    </div>
 
 
 
 
   </div>
+  <script src="../vue.js"></script>
   <script src="./main.js"></script>
 </body>
 </html>
