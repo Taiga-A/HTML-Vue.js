@@ -23,8 +23,8 @@
                       noneClass:message.name=='空',
                       normal:message.name!='空',  
                     }" 
-            @Mouseup="onDetails(message)"
-            v-for="message in value.aclass">{{message.name}}</br>{{message.name=='空'?'':message.place}}</div>
+            @Mouseup="onDetails(message,value,index)"
+            v-for="(message,index) in value.aclass">{{message.name}}</br>{{message.name=='空'?'':message.place}}</div>
       </div>
 
 

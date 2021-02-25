@@ -36,16 +36,16 @@ let app = new Vue({
             teacher: '刘先鹏',
           },
           {
-            name: '高等数学',
+            name: '小课',
             number: 1,
             place: '2-3-314',
-            teacher: '刘先鹏',
+            teacher: '白云浩',
           },
           {
-            name: '高等数学',
+            name: '小课',
             number: 1,
             place: '2-3-314',
-            teacher: '刘先鹏',
+            teacher: '李智超',
           },
       
         ]
@@ -320,21 +320,46 @@ let app = new Vue({
       '20:30 21:15',
       '21:15 22:00'
     ]
-
-
   },
   methods: {
-    onDetails(message){
-      if(message.name == '空'){
-        alert('这节没课哦');
+    onDetails(message,value,index){
+      let date = ['一','二','三','四','五','六','日'];
+      let classNumber = 0;
+      let classNums;
+      let text;
+      for(let i=0;i<index;i++){
+        classNumber+=value.aclass[i].number;
+      }
+
+      if(message.number == 1){
+        classNums = classNumber+1;
+      }else{
+        classNums = (classNumber+1)+'、'+(classNumber+2);
+      }
+
+      if(classNumber>=8){
+        text = '晚上';
+      }else if(classNumber>=4){
+        text = '下午';
+      }else{
+        text = '上午';
+      }
+
+      if(message.name == '空'){      
+        alert(
+          '周'+date[value.date-1]+text+
+          '，第: '+classNums+
+          '节:'+
+          '\n\n这节没课哦');
       }
       else alert(
-        '课程: '+message.name+
+        '周'+date[value.date-1]+text+
+        '，第: '+classNums+
+        '节:'+
+        '\n\n课程: '+message.name+
         '\n教室: '+message.place+
         '\n教师: '+message.teacher);
     }
-
-
   },
   computed: {
 

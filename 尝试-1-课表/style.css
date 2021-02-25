@@ -54,7 +54,7 @@ body{
   background-color: #6c5ce7;
   border-radius: 0.2vw;
   transition: all 0.2s;
-  box-shadow: 2px 2px 2px black;
+  box-shadow: 2px 3px 2px black;
 }
 /* 每个课程 */
 .listNum{
@@ -65,7 +65,8 @@ body{
   border-radius: 0.2vw;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 2px 2px 2px black;
+  font-size: 0.7vw;
+  box-shadow: 2px 3px 2px black;
   opacity: 0.9;
 }
 .listNum:hover{
